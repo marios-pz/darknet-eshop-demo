@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manage Order</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a href="/" class="menu-button">
+            <button type="button" class="btn btn-success">Main Page</button>
+        </a>
+
+        <a href="date_sales" class="menu-button">
+            <button type="button" class="btn btn-success">
+                Check Sales with Date
+            </button>
+        </a>
+
+        <a href="orders" class="menu-button">
+            <button type="button" class="btn btn-success">View All Orders</button>
+        </a>
+    </nav>
+
+    <form method="POST" action="/view_order" class="stats_form">
+        <div class="form-group">
+            <label for="order_id">Order ID</label>
+            <input class="form-control" id="order_id" type="text" step="1" pattern="[0-9]+" name="order_id"
+                placeholder="Order Id" required />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div class="stats">
+        {% if order is defined and order|length > 0 %}
+        <table class="table table-bordered stats">
+            <!-- [(1, 'Motoroloda Edge 5G'), (1, 'Alienware Gaming Laptop')] -->
+            <tr>
+                <th>Quantity</th>
+                <th>Item</th>
+            </tr>
+
+            {% for item in order %}
+            <tr>
+                <th scope="col">{{ item[0] }}</th>
+                <td>{{ item[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %} {% if found %}
+        <h1>No such order found.</h1>
+        {% else %}
+        <h1>Search for order.</h1>
+        {% endif %} {% endif %}
+    </div>
+</body>
+
+</html>

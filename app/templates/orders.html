@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>View Orders</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a href="/" class="menu-button">
+            <button type="button" class="btn btn-success">Main Page</button>
+        </a>
+
+        <a href="date_sales" class="menu-button">
+            <button type="button" class="btn btn-success">
+                Check Sales with Date
+            </button>
+        </a>
+
+        <a href="view_order" class="menu-button">
+            <button type="button" class="btn btn-success">Check A Order</button>
+        </a>
+    </nav>
+
+    <table class="table table-bordered stats">
+        <tr>
+            <th>ID</th>
+            <th>CUSTOMER_ID</th>
+            <th>PRODUCT_ID</th>
+            <th>PURCHASE_DATE</th>
+            <th>QUANTITY</th>
+            <th>TOTAL_COST</th>
+            <th>DELIVERY_METHOD</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            {% for item in order %}
+            <th>{{ item }}</th>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

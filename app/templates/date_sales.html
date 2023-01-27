@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sales on Date</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a href="/" class="menu-button">
+            <button type="button" class="btn btn-success">Main Page</button>
+        </a>
+
+        <a href="view_order" class="menu-button">
+            <button type="button" class="btn btn-success">Check A Order</button>
+        </a>
+
+        <a href="orders" class="menu-button">
+            <button type="button" class="btn btn-success">View All Orders</button>
+        </a>
+    </nav>
+
+    <form method="POST" action="/date_sales" class="stats_form">
+        <div class="form-group">
+            <input class="form-control" id="order_id" type="text" step="1" pattern="[0-9]+" name="order_id"
+                placeholder="Order ID" required />
+            <input class="form-control" id="datetime" name="date" type="date" placeholder="Datetime" required />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div class="stats">
+        {% if order is defined and order|length > 0 %}
+        <table class="table table-bordered">
+            <tr>
+                <th>Count</th>
+                <th>Total Cost</th>
+            </tr>
+            <tr>
+                <th>{{ order[0][0] }}</th>
+                <th>{{ order[0][1] }}</th>
+            </tr>
+            <!-- <tr> -->
+            <!--     <th>ID</th> -->
+            <!--     <th>CUSTOMER_ID</th> -->
+            <!--     <th>PRODUCT_ID</th> -->
+            <!--     <th>PURCHASE_DATE</th> -->
+            <!--     <th>QUANTITY</th> -->
+            <!--     <th>TOTAL_COST</th> -->
+            <!--     <th>DELIVERY_METHOD</th> -->
+            <!-- </tr> -->
+            <!-- <tr> -->
+            <!--     {% for item in order[0] %} -->
+            <!--     <th>{{ item }}</th> -->
+            <!--     {% endfor %} -->
+            <!-- </tr> -->
+        </table>
+
+        {% else %} {% if found %}
+        <h1>No such order found.</h1>
+        {% else %}
+        <h1>Search for order.</h1>
+        {% endif %} {% endif %}
+    </div>
+</body>
+
+</html>

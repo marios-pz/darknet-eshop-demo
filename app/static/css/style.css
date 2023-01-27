@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    font-family: monospace;
+ }
+
+body {
+     background-image: url('../background.gif');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      color:white;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.btn {
+  font-size: 220%;
+  width: fit-content;
+  text-align: center;
+  display: inline-block;
+}
+
+.stats, .menu-button {
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro {
+  display: inline-block;
+}
+
+.stats_form {
+    padding-bottom:5%;
+    width: 15%;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table {
+    background-color: rgba(0,0,0, 0.8);
+    font-size: 180%;
+}
+
+.intro h1{
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap;
+  animation: 
+  typing 3s steps(20, end) forwards,
+  blink-caret 0.95s step-end infinite;
+  font-size: 600%;
+  width: 0;
+}
+
+.type {
+  display: inline-block;
+}
+
+.type h1{
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap;
+  animation: 
+  typing 3s steps(20, end) forwards,
+  blink-caret 0.95s step-end infinite;
+  width: 0;
+}
+
+.type h1, .intro h1 {
+    color: white;
+    padding-left: 5%;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+
+@media (min-width: 800px) {
+  .intro h1 {
+      font-size: 800%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro h1 {
+      font-size: 1100%;
+  }
+}

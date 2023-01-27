@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Κεντρικό eShop</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <a href="orders" class="menu-button">
+            <button type="button" class="btn btn-success">View All Orders</button>
+        </a>
+
+        <a href="date_sales" class="menu-button">
+            <button type="button" class="btn btn-success">
+                Check Sales with Date
+            </button>
+        </a>
+
+        <a href="view_order" class="menu-button">
+            <button type="button" class="btn btn-success">Check A Order</button>
+        </a>
+    </nav>
+
+    <div class="intro">
+        <h1>Hello Friend..</h1>
+    </div>
+</body>
+
+</html>
