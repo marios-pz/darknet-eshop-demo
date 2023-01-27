@@ -4,6 +4,12 @@ variable "region" {
     description = ""
 }
 
+variable "creds" {
+    default = ""
+    type = string 
+    description = "Very secret"
+}
+
 variable "zone" {
     type = string
     default = "us-central1-a"
