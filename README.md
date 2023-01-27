@@ -1,5 +1,8 @@
 # DarkNet-eshop 
 
+![Preview](https://user-images.githubusercontent.com/30930688/215182022-9e13f435-bf5d-4e54-ad47-a4d672d80e9e.png)
+
+
 ### Disclaimer 
 The project was an exercise for Uni.\n
 I've decided to turn it as a template for DevOps practise.
