@@ -1,0 +1,41 @@
+version: '3.9'
+
+networks:
+  net:
+
+services:
+  db:
+    image: mariadb:10.8.6
+
+    hostname: db
+
+    env_file:
+      - env/mariadb.env
+
+    ports:
+      - 3306:3006
+
+    volumes:
+      - ./scripts/db_init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    networks:
+      - net
+
+    hostname: db
+
+  app:
+    build: app
+
+    env_file:
+      - env/mariadb.env
+
+    networks:
+      - net
+
+    restart: on-failure
+
+    depends_on:
+      - db
+
+    ports:
+      - 3000:3000

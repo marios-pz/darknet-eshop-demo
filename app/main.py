@@ -4,21 +4,22 @@ from flask import Flask, render_template, request
 import mysql.connector
 from mysql.connector.pooling import CMySQLConnection
 
+import os
 
 app: Flask = Flask(__name__)
 
 # DATABASE INFO
-MYSQL_USER = "root"
-MYSQL_PASS = ""
-MYSQL_DB = "ERG_A"
+SQL_USER = "root"
+SQL_PASS = os.environ.get("MARIADB_ROOT_PASSWORD")
+SQL_DB = os.environ.get("MARIADB_DATABASE")
 
-cnx: None | CMySQLConnection | mysql.connector.MySQLConnection = (
-    mysql.connector.connect(
-        user=MYSQL_USER,
-        password=MYSQL_PASS,
-        host="localhost",
-        database=MYSQL_DB,
-    )
+print(SQL_USER, SQL_PASS, SQL_DB)
+
+cnx = mysql.connector.connect(
+    user=SQL_USER,
+    password=SQL_PASS,
+    host="db",
+    database=SQL_DB,
 )
 
 cursor = cnx.cursor()
@@ -85,5 +86,5 @@ def get_orders() -> Any:
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=80)
+    app.run(host="0.0.0.0", port=3000)
     cursor.close()
