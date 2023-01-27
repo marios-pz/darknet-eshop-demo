@@ -1,0 +1,17 @@
+terraform/credentials.json
+# Terraform files
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+terraform/*.tfvars.*
+
+# Terraform backend files
+terraform/terraform.tfstate
+terraform/terraform/terraform.tfstate.*
+
+# Local Terraform modules
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+# Terraform output files
+terraform/terraform.tfout
+terraform/terraform.tfplan
