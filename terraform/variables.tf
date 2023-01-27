@@ -15,7 +15,7 @@ variable "project" {
     description = "General settings"
     default = {
             name = "terraform-darknet-demo" 
-            creds = "credentials.json"
+            creds = ${var.GOOGLE}
             machine_type = "f1-micro"
     }
 }
