@@ -14,7 +14,7 @@ I've decided to turn it as a template for DevOps practise.
 * visit `localhost:80` or `your_ip:80`
 
 ### What I tried on 
-* Terraform 
+* Terraform (Deployment on Google) 
 * Ansible 
 * SQL
 
