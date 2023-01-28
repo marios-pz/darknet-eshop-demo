@@ -4,7 +4,7 @@
 
 
 ### Disclaimer 
-The project was an exercise for Uni.\n
+The project was an exercise for Uni.<br>
 I've decided to turn it as a template for DevOps practise.
 
 
@@ -12,4 +12,9 @@ I've decided to turn it as a template for DevOps practise.
 * `python3 -m pip install -r requirements.txt`
 * `python3 main.py`
 * visit `localhost:80` or `your_ip:80`
+
+### What I tried on 
+* Terraform 
+* Ansible 
+* SQL
 
