@@ -29,6 +29,19 @@ resource "google_compute_instance" "my_instance" {
                 //
             }
     }
+} 
+
+resource "google_compute_firewall" "allow_http" {
+  name    = "allow-http"
+  network = google_compute_network.terraform-network.id
+
+  allow {
+    protocol = "tcp"
+    ports    = ["3000"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = [var.project["name"]]
 }
 
 resource "google_compute_network" "terraform-network" {
