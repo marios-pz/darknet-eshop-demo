@@ -8,7 +8,6 @@ terraform/*.tfvars.*
 # Terraform backend files
 terraform/terraform.tfstate
 terraform/terraform/terraform.tfstate.*
-
 # Local Terraform modules
 terraform/.terraform/
 terraform/.terraform.lock.hcl

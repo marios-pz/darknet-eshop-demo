@@ -15,6 +15,5 @@ I've decided to turn it as a template for DevOps practise.
 
 ### What I tried on 
 * Terraform (Deployment on Google) 
-* Ansible 
 * SQL
 
